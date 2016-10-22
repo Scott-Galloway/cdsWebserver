@@ -7,7 +7,5 @@ docker/container-data/
 docker_container_data/
 node/
 **/node_modules/
-
-
-
-
+*.swp
+*.*~

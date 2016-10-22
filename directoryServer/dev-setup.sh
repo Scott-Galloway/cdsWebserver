@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 mvn -DskipTests package docker:build
 
 IMAGE=directoryserver_db_image
@@ -25,7 +25,7 @@ echo "OK - $CONTAINER is running. IP: $NETWORK, StartedAt: $STARTED"
 
 if [[ $1 == Start ]]; then
   echo "Starting directory server application..."
-  java -Dspring.profiles.active=dev -Ddb.server=$NETWORK -jar ./target/directory-server.jar
+  java -Dspring.profiles.active=dev -Ddb.server=i"$NETWORK" -jar ./target/directory-server.jar
 else
   echo "You can start the directory server app using the following command: "
   echo "java -Dspring.profiles.active=dev -Ddb.server=$NETWORK -jar ./target/directory-server.jar"
